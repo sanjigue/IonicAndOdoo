@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> Login </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <div text-center>
+    <img src="assets/imgs/odoo-logo.png" height="150px" width="180px" alt="No Image" />
+  </div>
+
+  <ion-card>
+    <ion-card-content>
+      <div>
+        <form (ngSubmit)="login()" #registerForm="ngForm">
+          <div class="spacer" style="height: 10px;"></div>
+
+          <ion-item class="border-box">
+            <ion-label>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+          </ion-item>
+          <div class="spacer" style="height: 10px;"></div>
+
+          <ion-item class="border-box">
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="pass" placeholder="Password" required></ion-input>
+          </ion-item>
+          <div class="spacer" style="height: 10px;"></div>
+          <ion-item *ngIf="dbList.length > 1" class="border-box">
+            <ion-label>Select Database</ion-label>
+            <ion-select [(ngModel)]="selectedDatabase" name="selectDatabase">
+              <ion-option *ngFor="let item of dbList" value="{{ item.dbName }}">{{ item.dbName }}</ion-option>
+            </ion-select>
+          </ion-item>
+          <div class="spacer" style="height: 10px;"></div>
+          <button ion-button block round outline [disabled]="!registerForm.form.valid" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+

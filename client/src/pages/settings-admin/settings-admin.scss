@@ -1,0 +1,41 @@
+page-settings-admin {
+
+    .letters-button-header{
+      color: rgb(3, 0, 187);
+      font-family:fantasy;
+      font-size:15px;
+      line-height: 280%
+    }
+
+    .card{
+        margin-top: 40%;
+    }
+    .button-header {
+        background-color: transparent;
+    }
+    .segmentColor{
+      background-image:  rgba(5, 253, 253, 0.6);
+    }
+    .headerColor{
+      background-image:
+        linear-gradient(
+            120deg,
+          rgba(5, 253, 253, 0.6), /* #cb356b */
+          rgba(178, 10, 245, 0.5) /* #bd3f32 */
+        );
+        width: 100%;
+    }
+   
+    .ripe-malinka-gradient-body {
+        background-image:
+        linear-gradient(
+            120deg,
+          rgba(203, 53, 107, 0.6), /* #cb356b */
+          rgba(189, 63, 50, 0.5) /* #bd3f32 */
+        );
+    }
+    .id {
+     display: none;
+  }
+      
+}

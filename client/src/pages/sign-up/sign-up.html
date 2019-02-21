@@ -1,0 +1,40 @@
+<ion-header>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="ripe-malinka-gradient-body">
+    <form [formGroup]="formgroup">
+        <ion-list class="card ripe-malinka-gradient form-white">
+            <div class="card-body">
+                <h2 class="text-center font-up font-bold py-4 white-text">Sign up</h2>
+                <!-- Form register -->
+                <div class="md-form">
+                    <ion-icon class="fa fa-envelope prefix white-text"></ion-icon>
+                    <input  formControlName="login"placeholder="" type="text" id="orangeForm-email2" class="form-control" [(ngModel)]="newLogin"
+                        name="newLogin">
+                    <label for="orangeForm-email2">Email</label>
+                <ion-item class="ripe-malinka-gradient-body" *ngIf="login.hasError('required') && login.touched">
+                  <p>*necesita rellenar el campo y que contenga @</p>
+                </ion-item>
+                </div>
+                <div class="md-form">
+                    <ion-icon class="fa fa-lock prefix white-text"></ion-icon>
+                    <input   formControlName="password" placeholder="password" type="password" id="orangeForm-pass2" class="form-control"
+                        [(ngModel)]="newPassword" name="newPassword">
+                    <label for="orangeForm-pass2">Contraseña</label>
+                    <ion-item class="ripe-malinka-gradient-body" *ngIf="password.hasError('required') && password.touched">
+                            <p>*es obligatorio rellenar la contraseña</p>
+                          </ion-item>
+                </div>
+                <!-- Form register -->
+                <div class="text-center">
+                    <button class="btn btn-outline-white waves-effect waves-light" [disabled]="!formgroup.valid" (click)="informationForAddOne()">next</button>
+                </div>
+            </div>
+        </ion-list>
+    </form>
+</ion-content>

@@ -1,0 +1,51 @@
+<!-- <ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header> -->
+
+
+<ion-content class="ripe-malinka-gradient-body">
+    <form [formGroup]="formgroup">
+        <div class="card-body">
+            <h2 class="text-center font-up font-bold py-4 white-text">Create</h2>
+            <!-- Form register -->
+            <div class="md-form">
+                <ion-icon class="fa fa-settings prefix white-text"></ion-icon>
+                <ion-input formControlName="name" type="text" placeholder="" [(ngModel)]="nameProduct" name="nameProduct"
+                    class="form-control"></ion-input>
+                <label for="orangeForm-email2">Nombre</label>
+                <ion-item class="ripe-malinka-gradient-body" *ngIf="name.hasError('required') && name.touched">
+                    <p>*necesita rellenar el campo</p>
+                </ion-item>
+            </div>
+            <div class="md-form">
+                <ion-icon class="fa fa- prefix white-text"></ion-icon>
+                <ion-input formControlName="price" type="number" placeholder="" [(ngModel)]="priceProduct" name="priceProduct"
+                    class="form-control"></ion-input>
+                <label for="orangeForm-pass2">Precio</label>
+                <ion-item class="ripe-malinka-gradient-body" *ngIf="price.hasError('required') && price.touched">
+                    <p>*necesita rellenar el campo solo con numeros</p>
+                </ion-item>
+            </div>
+
+            <div class="md-form">
+                <ion-icon class="fa fa-create prefix white-text"></ion-icon>
+                <ion-input formControlName="descrip" type="Text" placeholder="" [(ngModel)]="description" name="description"
+                    class="form-control"></ion-input>
+                <label for="orangeForm-pass2">Descripcion</label>
+                <ion-item class="ripe-malinka-gradient-body" *ngIf="descrip.hasError('required') && descrip.touched">
+                    <p>*necesita rellenar el campo</p>
+                </ion-item>
+            </div>
+            <!-- Form register -->
+            <div class="text-center">
+                <button class="btn btn-outline-white waves-effect waves-light" [disabled]="!formgroup.valid" (click)="CreateProduct()">next</button>
+            </div>
+        </div>
+    </form>
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)="goSettings()">
+            <ion-icon name="arrow-round-back" ></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
